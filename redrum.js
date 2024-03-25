@@ -1,7 +1,7 @@
 console.log("redrum")
 
 // zo word de gebruiker gevraagd om zijn of haar leeftijd in te voeren
-let birthDate = prompt("Voer uw geboortedatum in (YYYY-MM-DD):");
+let birthDate = prompt("Voer uw geboortedatum in (DD-MM-YYYY):");
 
 if (birthDate) {
     // zo wordt de leeftijd berekend, door de geboortedatum van de huidige datum af te trekken

@@ -27,7 +27,7 @@ const scenes = {
         ]
     },
     start: {
-        image: 'img/start.png',
+        image: 'img/Start.png',
         story: 'De schooldag duurt al best lang, ik verveel me dood :(',
         choices: [
             { text: 'Probeer op te letten', nextScene: 'vervolg' },
@@ -36,7 +36,7 @@ const scenes = {
         ]
     },
     vervolg: {
-        image: 'img/vervolg.png',
+        image: 'img/Vervolg.png',
         story: 'Ik ben zo moe, ik val echt in slaap.',
         choices: [
             { text: '...', nextScene: '2' }

@@ -1,11 +1,31 @@
 console.log("redrum")
 
+let birthDate = prompt("Voer uw geboortedatum in (YYYY-MM-DD):");
+
+if (birthDate) {
+    let age = new Date().getFullYear() - new Date(birthDate).getFullYear();
+    if (age >= 16) {
+        alert("Welkom bij [redrum]");
+    } else {
+        alert("Je moet minimaal 16 zijn om [redrum] te spelen");
+        window.location.href = "te-jong.html";
+    }
+}
+
+
 const storyElement = document.querySelector('#story');
 const choicesElement = document.querySelector('#choices');
 
-let currentScene = 'start';
+let currentScene = 'beginscherm';
 
 const scenes = {
+    beginscherm: {
+        image: 'img/redrum-logo-rood.png',
+        story: 'Het is tijd voor een nieuwe schooldag',
+        choices: [
+            { text: 'Start', nextScene: 'start' }
+        ]
+    },
     start: {
         image: 'img/start.png',
         story: 'De schooldag duurt al best lang, ik verveel me dood :(',

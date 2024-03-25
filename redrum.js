@@ -311,5 +311,5 @@ showScene('beginscherm');
 
 // bronnen : https://www.w3schools.com/jsref/dom_obj_document.asp, hier heb ik vooral gebruik gemaakt van de HTML Dom onderwerpen en de rest van de tutorials bekeken.
 // https://www.w3schools.com/js/js_if_else.asp, hier heb ik meer informatie over de if else statments gezocht
-// ook heb ik soms vragen gesteld als ik ergens niet uit kwam, dit heb ik op de manier gedaan die je op de foto in de pdf kan zien.
+// ook heb ik soms vragen gesteld aan chat GPT als ik ergens niet uit kwam, dit heb ik op de manier gedaan die je op de foto in de pdf kan zien.
 

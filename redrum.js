@@ -1,22 +1,22 @@
 console.log("redrum")
 
+// zo word de gebruiker gevraagd om zijn of haar leeftijd in te voeren
 let birthDate = prompt("Voer uw geboortedatum in (YYYY-MM-DD):");
 
 if (birthDate) {
+    // zo wordt de leeftijd berekend, door de geboortedatum van de huidige datum af te trekken
     let age = new Date().getFullYear() - new Date(birthDate).getFullYear();
+
+    // hier controleerd de code of de gebruiker ouder is dan of gelijk aan 16 jaar
     if (age >= 16) {
         alert("Welkom bij [redrum]");
     } else {
         alert("Je moet minimaal 16 zijn om [redrum] te spelen");
+
+        // wanneer de gebruiker te jong is wordt hij/zij naar deze pagina gestuurd
         window.location.href = "te-jong.html";
     }
 }
-
-
-const storyElement = document.querySelector('#story');
-const choicesElement = document.querySelector('#choices');
-
-let currentScene = 'beginscherm';
 
 const scenes = {
     beginscherm: {
@@ -289,25 +289,27 @@ const scenes = {
 
 };
 
-function renderScene(scene) {
-    const sceneImage = document.querySelector('#sceneImage');
-    sceneImage.src = scene.image;
-
-    const storyText = document.querySelector('#storyText');
-    storyText.innerText = scene.story;
-
-    choicesElement.innerHTML = '';
+// dit is een functie die een scene laat zien door gebruik te maken van de sceneName
+function showScene(sceneName) {
+    const scene = scenes[sceneName];
+    document.querySelector('#sceneImage').src = scene.image;
+    document.querySelector('#storyText').innerText = scene.story;
+    const choicesElement = document.querySelector('#choices');
+    choicesElement.innerHTML = ''; // deze regel wist de bestaande knoppen
+    //de regels hier onder maken nieuwe knoppen bij iedere scene
     scene.choices.forEach(choice => {
-        const button = document.createElement('button');
-        button.innerText = choice.text;
-        button.addEventListener('click', () => goToScene(choice.nextScene));
-        choicesElement.appendChild(button);
+        const button = document.createElement('button'); // Maak een nieuw <button> element
+        button.innerText = choice.text; // veranderd de tekst in de knop naar de tekst bij de choises
+        // door te klikken op de button ga je naar de volgende scene die naast de button staat aangegeven
+        button.addEventListener('click', () => showScene(choice.nextScene));
+        choicesElement.appendChild(button); // Zo voeg je de knoppen steeds toe aan de html
     });
 }
 
-function goToScene(sceneName) {
-    currentScene = sceneName;
-    renderScene(scenes[sceneName]);
-}
+// zo weet het spel waar de code begint
+showScene('beginscherm');
 
-goToScene(currentScene);
+// bronnen : https://www.w3schools.com/jsref/dom_obj_document.asp, hier heb ik vooral gebruik gemaakt van de HTML Dom onderwerpen en de rest van de tutorials bekeken.
+// https://www.w3schools.com/js/js_if_else.asp, hier heb ik meer informatie over de if else statments gezocht
+// ook heb ik soms vragen gesteld als ik ergens niet uit kwam, dit heb ik op de manier gedaan die je op de foto in de pdf kan zien.
+

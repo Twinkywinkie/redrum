@@ -1,19 +1,16 @@
 console.log("redrum")
 
-// zo word de gebruiker gevraagd om zijn of haar leeftijd in te voeren
-let birthDate = prompt("Voer uw geboortedatum in (DD-MM-YYYY):");
+//Leeftijd van de gebruiker
+let leeftijd = prompt("Voer je leeftijd in: ");
 
-if (birthDate) {
-    // zo wordt de leeftijd berekend, door de geboortedatum van de huidige datum af te trekken
-    let age = new Date().getFullYear() - new Date(birthDate).getFullYear();
-
-    // hier controleerd de code of de gebruiker ouder is dan of gelijk aan 16 jaar
-    if (age >= 16) {
+if (isNaN(leeftijd)) {
+    alert("Ongeldige invoer, voer een getal in");
+    location.reload();
+} else {
+    if (leeftijd > 16) {
         alert("Welkom bij [redrum]");
     } else {
         alert("Je moet minimaal 16 zijn om [redrum] te spelen");
-
-        // wanneer de gebruiker te jong is wordt hij/zij naar deze pagina gestuurd
         window.location.href = "te-jong.html";
     }
 }
@@ -63,7 +60,7 @@ const scenes = {
         image: 'img/4.1.png',
         story: 'De klok is stuk, waar zijn de wijzers?',
         choices: [
-            { text: 'Kijk op de grond', nextScene: '4.2' },
+            { text: 'Kijk naar de grond', nextScene: '4.2' },
             { text: 'Kijk op je telefoon', nextScene: '5.1' },
             { text: 'Kijk naar buiten', nextScene: '6' }
         ]
@@ -118,7 +115,7 @@ const scenes = {
         choices: [
             { text: '......', nextScene: '5.34' }
         ]
-    },    
+    },
     5.33: {
         image: 'img/5.33.png',
         story: 'Je loopt richting de deur, maar opeens voel je een steek in je rug',
@@ -260,28 +257,28 @@ const scenes = {
     },
     Einde1: {
         image: 'img/Einde1.png',
-        story: 'Je ben dood',
+        story: 'Je bent dood',
         choices: [
             { text: 'Probeer opnieuw', nextScene: 'start' }
         ]
     },
     Einde2: {
         image: 'img/Einde2.png',
-        story: 'Je ben dood',
+        story: 'Je bent dood',
         choices: [
             { text: 'Probeer opnieuw', nextScene: 'start' }
         ]
     },
     Einde3: {
         image: 'img/Einde3.png',
-        story: 'Je ben dood',
+        story: 'Je bent dood',
         choices: [
             { text: 'Probeer opnieuw', nextScene: 'start' }
         ]
     },
     Einde4: {
         image: 'img/Einde4.png',
-        story: 'Je ben dood',
+        story: 'Je bent dood',
         choices: [
             { text: 'Probeer opnieuw', nextScene: 'start' }
         ]
@@ -309,7 +306,18 @@ function showScene(sceneName) {
 // zo weet het spel waar de code begint
 showScene('beginscherm');
 
-// bronnen : https://www.w3schools.com/jsref/dom_obj_document.asp, hier heb ik vooral gebruik gemaakt van de HTML Dom onderwerpen en de rest van de tutorials bekeken.
+
+
+
+
+
+// bronnen : 
+//https://youtu.be/PBcqGxrr9g8?si=RcryTVEwYKPMV5H5
+//https://www.w3schools.com/jsref/met_document_createelement.asp,
+//https://www.w3schools.com/jsref/met_node_appendchild.asp,
+//https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+//https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_document_createelement3, 
+//https://www.w3schools.com/jsref/dom_obj_document.asp, hier heb ik vooral gebruik gemaakt van de HTML Dom onderwerpen en de rest van de tutorials bekeken.
 // https://www.w3schools.com/js/js_if_else.asp, hier heb ik meer informatie over de if else statments gezocht
 // ook heb ik soms vragen gesteld aan chat GPT als ik ergens niet uit kwam, dit heb ik op de manier gedaan die je op de foto in de pdf kan zien.
 

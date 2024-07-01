@@ -14,7 +14,21 @@ body {
     width: 15%;
 }
 
+#knop {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(64, 64, 64);
+    color: white; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+}
 
+#knop:hover {
+    background-color: #1e1e1e;
+}
 
 #story {
     font-family: Arial, Helvetica, sans-serif;
@@ -50,6 +64,10 @@ button {
     border: none;
     color: white;
     background-color: rgb(64, 64, 64);
+}
+
+button:hover {
+    background-color: #1e1e1e;
 }
 
 h1 {
